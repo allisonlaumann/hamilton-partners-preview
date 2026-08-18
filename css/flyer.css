@@ -1,0 +1,83 @@
+/* ============================================================
+   HAMILTON PARTNERS — Printable suite flyer
+   Recreates the layout of the current site's generate_suites_pdf
+   output: green header band, building photo + details, suite
+   features, floor-plan key, space plan, sponsoring-broker footer.
+   Letter portrait; one .flyer per page when printing.
+   ============================================================ */
+
+:root{
+  --f-green:#0D3B24;          /* header band, matches current flyer */
+  --f-link:#2E7D32;           /* green email links */
+  --f-gray:#9a9a9a;           /* section headings */
+  --f-rule:#8a8a8a;
+}
+
+*{box-sizing:border-box;}
+body{margin:0;background:#525659;font-family:Arial, Helvetica, sans-serif;
+  color:#222;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+
+/* ---------- screen-only toolbar ---------- */
+.toolbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:16px;
+  justify-content:space-between;background:#1d1f1e;color:#fff;padding:10px 18px;}
+.tb-back{color:#fff;text-decoration:none;font-size:.9rem;opacity:.85;}
+.tb-back:hover{opacity:1;}
+.tb-hint{margin:0;font-size:.82rem;opacity:.7;}
+.tb-print{background:#fff;color:#1d1f1e;border:0;border-radius:3px;font-weight:700;
+  padding:10px 18px;font-size:.9rem;cursor:pointer;}
+.tb-print:hover{background:#e8e8e8;}
+
+.f-empty{color:#fff;text-align:center;padding:60px 20px;}
+.f-empty a{color:#9fd6ae;}
+
+/* ---------- the flyer sheet ---------- */
+.flyer{width:8.5in;height:11in;margin:24px auto;background:#fff;overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,.4);display:flex;flex-direction:column;}
+
+/* header band */
+.f-head{background:var(--f-green);color:#fff;display:flex;align-items:center;
+  justify-content:space-between;padding:.55in .55in .35in;}
+.f-addr{font-family:Georgia, "Times New Roman", serif;font-size:12.5pt;line-height:1.45;}
+.f-addr strong{display:block;font-size:13pt;}
+.f-addr em{display:block;font-weight:400;}
+.f-brand{text-align:center;}
+.f-brand img{width:3.4in;display:block;}
+.f-brand span{display:block;font-size:9pt;margin-top:2px;opacity:.9;text-align:left;}
+
+/* body */
+.f-body{padding:.35in .55in 0;flex:1;display:flex;flex-direction:column;min-height:0;}
+
+.f-rule{font-size:10.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--f-gray);border-bottom:1px solid var(--f-rule);padding-bottom:4px;
+  margin:0 0 10px;}
+
+.f-cols{display:grid;grid-template-columns:1.9in 1fr 2.2in;gap:.35in;margin-bottom:.3in;}
+.f-photo{width:100%;margin-bottom:14px;}
+
+.f-details{border-collapse:collapse;font-size:9.5pt;width:100%;}
+.f-details th{text-align:left;font-weight:700;padding:2.5px 8px 2.5px 0;white-space:nowrap;}
+.f-details td{text-align:right;padding:2.5px 0;white-space:nowrap;}
+
+.f-features{margin:0;padding-left:16px;font-size:9.5pt;line-height:1.55;}
+.f-features li{margin-bottom:4px;}
+
+.f-key{max-width:100%;max-height:2.4in;object-fit:contain;}
+
+.f-plan-wrap{flex:1;min-height:0;display:flex;align-items:flex-start;justify-content:center;}
+.f-plan{max-width:6.6in;max-height:100%;object-fit:contain;}
+
+/* footer */
+.f-foot{padding:.25in .55in .45in;}
+.f-contacts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px 20px;font-size:9pt;
+  line-height:1.5;}
+.contact h4{margin:0 0 2px;font-size:10pt;}
+.c-mail{color:var(--f-link);text-decoration:underline;}
+
+/* ---------- print ---------- */
+@page{size:letter portrait;margin:0;}
+@media print{
+  body{background:#fff;}
+  .toolbar{display:none;}
+  .flyer{width:auto;margin:0;box-shadow:none;page-break-after:always;}
+  .flyer:last-child{page-break-after:auto;}
+}

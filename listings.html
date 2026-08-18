@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-palette="ivory" data-type="cormorant" data-logo="l">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-store" />
+  <title>Hamilton Lakes — Available Space | Hamilton Partners</title>
+  <meta name="description" content="Available office suites at Hamilton Lakes Business Park, Itasca, IL. Browse buildings and suites, then download printable PDF flyers." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css?v=5" />
+  <link rel="stylesheet" href="css/listings.css?v=1" />
+</head>
+<body class="listings-body">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header is-scrolled" id="siteHeader">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Hamilton Partners home">
+        <img class="brand-logo brand-logo--light" src="assets/logo/hp-logo-white.svg" alt="Hamilton Partners" width="245" height="36" />
+        <img class="brand-logo brand-logo--dark" src="assets/logo/hp-logo.svg" alt="Hamilton Partners" width="245" height="36" />
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html#what-we-do">What We Do</a>
+        <a href="index.html#team">Our Team</a>
+        <a href="index.html#investment">Investment</a>
+        <a href="index.html#contact">Contact</a>
+        <a class="nav-cta" href="index.html#available">Available Space</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="listings-main">
+    <section class="listings-hero">
+      <div class="wrap">
+        <p class="section-kicker">Available Space &middot; Chicago</p>
+        <h1 class="listings-title">Hamilton Lakes Business Park</h1>
+        <p class="section-lede">Itasca, Illinois &mdash; at the interchange of the Elgin&ndash;O'Hare Expressway and I&#8209;355.
+          Select suites below and download a printable flyer package, or open any suite's flyer directly.</p>
+        <p class="listings-note" id="dataNote"></p>
+      </div>
+    </section>
+
+    <section class="wrap" id="buildings" aria-live="polite">
+      <!-- buildings render here -->
+    </section>
+  </main>
+
+  <!-- selection bar: appears when 1+ suites are checked -->
+  <div class="select-bar" id="selectBar" hidden>
+    <div class="wrap select-bar-inner">
+      <p class="select-count"><strong id="selCount">0</strong> <span id="selNoun">suites</span> selected</p>
+      <div class="select-actions">
+        <button class="btn btn--bar-ghost" id="clearSel" type="button">Clear</button>
+        <a class="btn btn--primary" id="pdfLink" href="#" target="_blank" rel="noopener">Download Printable PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="listings-footer">
+    <div class="wrap">
+      <p>Prototype demo &mdash; data mirrored from
+        <a href="https://www.hamiltonpartners.com/business_park/hamilton-lakes/" target="_blank" rel="noopener">hamiltonpartners.com</a>.
+        Rates and availability shown are as of the last data refresh.</p>
+    </div>
+  </footer>
+
+  <script src="js/listings.js?v=1"></script>
+</body>
+</html>
